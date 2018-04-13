@@ -11,6 +11,10 @@ public class DaysOfMonth {
         int year = Integer.parseInt(args[0]);
         int month = Integer.parseInt(args[1]);
         // Buggy output
-        System.out.printf("Month of %d/%d has 30 days\n", month, year);
+        System.out.printf("Month of %d/%d has %d days\n",
+        		month, year, daysofmonth(month, year));
+    }
+    static int daysofmonth(int month, int year) {
+    	return 30;
     }
 }
