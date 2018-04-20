@@ -10,7 +10,6 @@ public class DaysOfMonth {
   public static void main(String[] args){
     int year = Integer.parseInt(args[0]);
     int month = Integer.parseInt(args[1]);
-    // Buggy output
     System.out.printf("Month of %d/%d has %d days\n",
         month, year, daysofmonth(month, year));
   }
