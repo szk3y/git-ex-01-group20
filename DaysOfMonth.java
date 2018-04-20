@@ -8,10 +8,23 @@
  */
 public class DaysOfMonth {
   public static void main(String[] args){
+    if(args.length != 2) {
+      printUsage();
+    }
     int year = Integer.parseInt(args[0]);
     int month = Integer.parseInt(args[1]);
+    if(!isCorrectArgs(year, month)) {
+      printUsage();
+    }
     System.out.printf("Month of %d/%d has %d days\n",
         month, year, daysofmonth(month, year));
+  }
+  static void printUsage() {
+    System.err.println("Please give me valid year and month as command line arguments");
+    System.exit(1);
+  }
+  static boolean isCorrectArgs(int year, int month) {
+    return 0 <= year && 1 <= month && month <= 12;
   }
   static int daysofmonth(int month, int year) {
     int[] days = new int[]{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
